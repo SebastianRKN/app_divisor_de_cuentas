@@ -1,50 +1,57 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# App divisor de cuentas Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. SRP — responsabilidad única
+Cada clase tiene una razón de cambio. El cálculo no valida entradas ni formatea texto.
+La validación, el cálculo y la presentación del resultado se mantienen separados.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. OCP — extensión del redondeo
+Agregar una nueva regla de redondeo no obliga a modificar las clases de cálculo existentes.
+El cálculo utiliza el contrato EstrategiaRedondeo.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. LSP — sustitución
+Cualquier implementación de EstrategiaRedondeo puede sustituir a otra.
+El consumidor no usa casts ni comprobaciones de tipo para escoger el comportamiento.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. ISP — interfaces pequeñas
+EstrategiaRedondeo expone solo la operación necesaria para redondear.
+Ningún consumidor depende de métodos que no necesita.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. DIP — inversión de dependencias
+presentation depende de contratos de domain, nunca de implementaciones concretas de data.
+Las dependencias se reciben por constructor y se conectan en main.dart.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Arquitectura limpia y seguridad
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- Estructura: lib/presentation, lib/domain y lib/data.
+- Dirección de dependencias: presentation -> domain <- data.
+- domain contiene entidades, casos de uso e interfaces; no importa package:flutter,
+  presentation ni data.
+- data implementa las estrategias definidas por domain. Esta capa no implica agregar
+  una base de datos ni acceso a red.
+- presentation contiene pantalla y coordinación; no contiene la fórmula del reparto.
+- lib/main.dart es el punto de composición de dependencias de producción.
+  Las estrategias concretas solo se instancian allí dentro de lib/.
+  Los tests pueden instanciar estrategias para verificar sus contratos.
+- Nunca guardar secretos ni API keys en el repositorio.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Calidad, pruebas y explicación del código
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Toda funcionalidad crítica tiene pruebas.
+- Los criterios de aceptación se convierten en pruebas ejecutables.
+- Toda función debe poder explicarse: qué hace, por qué existe, qué recibe,
+  qué devuelve y qué errores produce.
+- Verificar las dependencias mediante lectura de imports y búsquedas en lib/.
+- Verificar sustitución y cálculo con pruebas; las búsquedas por sí solas no demuestran SOLID.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Primera constitución de la reconstrucción interactiva, acordada con el estudiante.
+Registra las reglas de la práctica y su requisito explícito de arquitectura limpia.
+Los cambios de reglas se documentan antes de implementar el código afectado.
+La revisión de plan, tareas e implementación comprueba estas reglas.
+La versión distingue cambios incompatibles (mayor), ampliaciones (menor) y
+correcciones de redacción (parche).
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-01
