@@ -2,7 +2,7 @@
 
 **Feature Branch**: sdd-interactivo
 **Created**: 2026-10-01
-**Status**: Especificación inicial; pendiente de revisión de clarificaciones
+**Status**: Lista para planificación; clarificación de propina resuelta
 **Input**: Alcance confirmado por el estudiante: una pantalla con monto, personas,
 propina, redondeo exacto/hacia arriba y resultado con dos decimales, sin conexión.
 
@@ -31,7 +31,8 @@ elegir un modo de redondeo y tocar Calcular para saber cuánto paga cada persona
 - Personas debe ser un entero positivo; texto, fracciones, vacío y valores menores que uno
   muestran "Debe haber al menos una persona".
 - Monto vacío, negativo, no numérico o no finito muestra "Monto inválido".
-- Propina negativa, no numérica o no finita muestra "Propina inválida".
+- Propina vacía (también si contiene solo espacios) equivale a 0%.
+- Propina no vacía negativa, no numérica o no finita muestra "Propina inválida".
 - Monto cero y propina cero son válidos.
 - Si los datos exceden la capacidad de cálculo, mostrar "Monto inválido", sin pago.
 
@@ -46,6 +47,7 @@ elegir un modo de redondeo y tocar Calcular para saber cuánto paga cada persona
 - **FR-005**: Las entradas inválidas muestran el mensaje correspondiente sin resultado de pago.
 - **FR-006**: Funciona completamente offline, sin red ni base de datos.
 - **FR-007**: No incluye login, historial, reparto desigual ni funciones adicionales.
+- **FR-008**: Al calcular, la propina vacía se interpreta como 0%, sin mostrar error.
 
 ### Key Entities
 - **Cuenta**: monto total, número de personas y porcentaje de propina.
@@ -64,9 +66,16 @@ Estas decisiones menores son propuestas del agente para revisar en clarify, no r
 atribuidas al estudiante:
 - Modo inicial Exacto; propina inicialmente 0.
 - Aceptar punto y coma como separador decimal, sin separadores de miles.
-- Propuesta inicial: si se borra la propina, mostrar "Propina inválida"; pendiente
-  de consultar si el estudiante prefiere interpretarla como cero.
 - No se distribuye la diferencia de centavos entre personas ni se promete que la suma
   redondeada coincida exactamente con el total.
 - Las reglas técnicas de arquitectura limpia se encuentran en la constitución;
   esta especificación describe el comportamiento.
+
+## Clarifications
+
+### Session 2026-10-01
+- Q: Si el usuario deja vacía la propina, ¿qué debe pasar?
+  → A: "interpretala como 0". La entrada vacía se interpreta como 0%.
+- Comprobación adicional: monto 100, 4 personas, propina vacía y modo exacto
+  debe mostrar 25.00 por persona, sin error. Esta comprobación complementa
+  los seis escenarios originales sin reemplazarlos.
