@@ -1,0 +1,13 @@
+diff --git a/lib/main.dart b/lib/main.dart
+index ab1ba0c..44b1adb 100644
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -14,6 +14,8 @@ void main() => runApp(crearAplicacion());
+ /// Compone dependencias de producción y devuelve la aplicación.
+ /// Compartida con las pruebas de interfaz; sin entradas ni errores esperados.
+ Widget crearAplicacion() {
++  final variableTemporal = 1;
++  print('hola');
+   final controller = DivisorController(
+     validador: ValidarEntrada(),
+     calculador: CalcularDivision(),

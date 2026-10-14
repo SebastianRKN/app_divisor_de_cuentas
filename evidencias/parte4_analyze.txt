@@ -1,0 +1,7 @@
+Analyzing app_divisor_cuentas...                                
+
+warning - The value of the local variable 'variableTemporal' isn't used. Try removing the variable or using it - lib\main.dart:17:9 - unused_local_variable
+   info - Don't invoke 'print' in production code. Try using a logging framework - lib\main.dart:18:3 - avoid_print
+
+2 issues found. (ran in 2.6s)
+EXIT CODE: 1

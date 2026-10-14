@@ -1,0 +1,64 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261013202050
+Username: SEBASTIAN\sebas
+RunAs User: SEBASTIAN\sebas
+Configuration Name: 
+Machine: SEBASTIAN (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\sebas\Documents\Codex\2026-10-13\files-pasted-by-the-user-prompt\work\stage.ps1 -Stage parte1_verde -Command flutter pub get; flutter test --reporter expanded
+Process ID: 7188
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is evidencias\parte1_verde.txt
+ETAPA: parte1_verde | Rama: sdd | Commit: c61881b
+COMANDO: flutter pub get; flutter test --reporter expanded
+Resolving dependencies... (2.6s)
+Downloading packages...
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+4 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart
+00:00 +0: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 1. reparto normal
+00:00 +1: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 2. sin propina
+00:00 +2: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 3. cero personas
+00:00 +3: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 4. monto no numérico
+00:00 +4: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 5. redondeo exacto
+00:00 +5: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 6. redondeo hacia arrib
+a
+00:00 +6: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: LSP: el mismo cálculo a
+cepta ambas estrategias
+00:00 +7: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 1. reparto no
+rmal
+00:00 +8: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 1. reparto no
+rmal
+00:00 +9: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 1. reparto no
+rmal
+00:02 +10: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 2. sin propi
+na
+00:02 +11: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 3. cero pers
+onas
+00:02 +12: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 4. monto no
+numérico
+00:03 +13: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 5. redondeo
+exacto
+00:03 +14: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 6. redondeo
+hacia arriba
+00:04 +15: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Un error retira el pag
+o anterior
+00:05 +16: All tests passed!
+EXIT CODE: 0
+**********************
+Windows PowerShell transcript end
+End time: 20261013202149
+**********************

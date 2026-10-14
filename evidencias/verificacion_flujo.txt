@@ -1,0 +1,3 @@
+00:00 +0: loading C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/.dart_tool/verificacion_flujo_test.dart
+00:00 +0: Flujo real: 100% calcula 50.00 y 150% retira el resultado
+00:02 +1: All tests passed!

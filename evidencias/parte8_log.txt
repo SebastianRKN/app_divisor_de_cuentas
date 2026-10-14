@@ -1,0 +1,8 @@
+dca80ab refactor: numero magico de centavos
+4cbf3c1 verde: propina maxima 100
+7d4e28b rojo: pruebas de propina maxima 100
+c61881b documentar bitacora de migracion React sin modificar Flutter
+92fc101 app divisor de cuenta - rama sdd, con pruebas
+763b8c0 constitution, spec, clarificaciones, plan, tareas y analisis
+436b3f9 archivo de instrucciones del agente
+660c5b9 proyecto base de flutter, sin tocar

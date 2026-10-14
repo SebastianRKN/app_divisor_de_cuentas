@@ -1,0 +1,5 @@
+
+Algorithm : SHA256
+Hash      : 05E3351816F90EB5FC766F30BA1530D304FCFC7BF588756D54903B3D2AC46380
+Path      : C:\Users\sebas\OneDrive\Desktop\app\participacion 7\app_divisor_cuentas\coverage\lcov.info
+
