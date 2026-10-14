@@ -18,6 +18,9 @@ class ValidarEntrada implements ValidadorEntrada {
     if (!cuenta.propina.isFinite || cuenta.propina < 0) {
       return 'Propina inválida';
     }
+    if (cuenta.propina > 100) {
+      return 'La propina no puede superar el 100%';
+    }
     // Garantiza que tampoco desborden el total y el redondeo a centavos.
     final total = cuenta.monto * (1 + cuenta.propina / 100);
     if (!total.isFinite || !(total / cuenta.personas * 100).isFinite) {
