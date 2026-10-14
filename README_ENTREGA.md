@@ -8,14 +8,14 @@ Aplicación Flutter original conservada. Las propinas mayores al 100% se rechaza
 
 | Parte | Estado verificado |
 |---|---|
-| 1. Preparación | Ejecutada: sdd limpio, dependencias resueltas, 16 pruebas correctas. PNG pendiente. |
-| 2. Rojo | Ejecutada: exactamente dos pruebas nuevas; 17 correctas y 1 fallo por devolver null. Commit real anterior al código. PNG pendiente. |
-| 3. Verde | Ejecutada: cambio mínimo en lib/, 18 pruebas correctas. PNG pendiente. |
-| 4. Linter | Ejecutada: avisos temporales unused_local_variable y avoid_print registrados y retirados. Análisis final limpio; sin commit vacío. PNG pendiente. |
+| 1. Preparación | Ejecutada: sdd limpio, dependencias resueltas, 16 pruebas correctas. PNG disponible del registro original; captura posterior en visor. |
+| 2. Rojo | Ejecutada: exactamente dos pruebas nuevas; 17 correctas y 1 fallo por devolver null. Commit real anterior al código. PNG disponible del registro original; captura posterior en visor. |
+| 3. Verde | Ejecutada: cambio mínimo en lib/, 18 pruebas correctas. PNG disponible del registro original; captura posterior en visor. |
+| 4. Linter | Ejecutada: avisos temporales unused_local_variable y avoid_print registrados y retirados. Análisis final limpio; sin commit vacío. PNG disponible del registro original; captura posterior en visor. |
 | 5. Code smells | Completa: revisión de los 11 archivos; hallazgos con líneas en evidencias/parte5_code_smells.md. |
-| 6. Refactor | Ejecutada: constante privada para centavos; 18 pruebas antes y después, sin cambios en test/. PNG pendiente. |
-| 7. Cobertura | Ejecutada: 92/93 líneas (98.92%). coverage/ ignorado y excluido de la entrega. PNG pendiente. |
-| 8. Documentación | Respuestas, registros e historial preparados. Las siete capturas PNG siguen pendientes; consultar evidencias/README.md. |
+| 6. Refactor | Ejecutada: constante privada para centavos; 18 pruebas antes y después, sin cambios en test/. PNG disponible del registro original; captura posterior en visor. |
+| 7. Cobertura | Ejecutada: 92/93 líneas (98.92%). coverage/ ignorado y excluido de la entrega. PNG disponible del registro original; captura posterior en visor. |
+| 8. Documentación | Respuestas, registros e historial preparados. Las siete capturas PNG están disponibles; consultar su procedencia en evidencias/README.md. |
 
 ## Verificaciones finales
 
@@ -33,6 +33,8 @@ El ZIP contiene una carpeta app_divisor_de_cuentas/ con fuentes, pruebas, plataf
 
 Con Flutter 3.47.1 / Dart 3.13.1 se puede recuperar el proyecto con `flutter pub get`, verificar con `flutter test` y `flutter analyze`, y compilar con `flutter build web --release`. Estos comandos ya se ejecutaron durante la preparación; se indican para reproducibilidad.
 
-## Límite de la entrega
+## Capturas y revisión de la rúbrica
 
-No se generó ninguna captura PNG: la consola del entorno no expuso una ventana capturable. Se conservaron registros auténticos durante las etapas; no son capturas simuladas. Si D2L exige los siete PNG como requisito estricto, ese requisito sigue pendiente. El código, los commits, las respuestas y las verificaciones sí están realizados.
+Se añadieron las siete capturas PNG auténticas de los registros originales abiertos en Bloc de notas. Se obtuvieron después del proceso inicial; no se presentan como capturas de la terminal durante aquella ejecución. La captura del refactor muestra el diff y sus pruebas; la de cobertura muestra la tabla completa.
+
+Consultar AUDITORIA_RUBRICA.md y evidencias/README.md. El código, los commits y las salidas respaldan el cumplimiento técnico. Si el docente exige que las capturas sean contemporáneas a la ejecución original, esa condición no puede garantizarse con capturas posteriores del visor. La nota corresponde al docente.

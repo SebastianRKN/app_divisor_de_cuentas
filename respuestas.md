@@ -12,4 +12,4 @@ Elegí el número mágico del redondeo. Declaré la constante privada `_centavos
 ## 4. Coverage
 `lib/main.dart` tuvo la menor cobertura entre los archivos instrumentados: 11 de 12 líneas, es decir, 91.67%. La cobertura total fue 92 de 93 líneas (98.92%). La interfaz `estrategia_redondeo.dart` no aparece instrumentada y no corresponde asignarle 0%. Una línea sin ejecutar no demuestra un error: las pruebas crean la aplicación con `crearAplicacion()` y no ejecutan la línea de arranque `main()`. La cobertura mide ejecución de líneas, no demuestra corrección ni cobertura de todas las ramas.
 
-La tabla completa está en `evidencias/cobertura.md` y las salidas originales en `evidencias/`. Las limitaciones de las capturas se detallan en `evidencias/README.md`.
+La tabla completa está en `evidencias/cobertura.md` y las salidas originales en `evidencias/`. La procedencia y las limitaciones de las capturas se detallan en `evidencias/README.md`.

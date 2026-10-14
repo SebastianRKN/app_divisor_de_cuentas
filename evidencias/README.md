@@ -1,20 +1,24 @@
-# Evidencias y límites de captura
+# Evidencias y procedencia de las capturas
 
-Las salidas TXT son registros originales de comandos ejecutados durante cada etapa. No son capturas ni se han convertido en imágenes que simulen una terminal.
+Las siete imágenes PNG son capturas auténticas de la ventana de Bloc de notas en Windows, obtenidas con Windows.Graphics.Capture mediante computer-use después de la ejecución original. Se muestran los registros originales guardados durante cada etapa. No son capturas de la terminal en el instante de ejecución ni nuevas ejecuciones de esos estados. No se alteraron resultados, se dibujó una terminal ni se generaron imágenes artificiales.
 
-Se intentó abrir una consola PowerShell y capturar su ventana mediante GetConsoleWindow, GetWindowRect y System.Drawing.CopyFromScreen en la parte 1. El entorno devolvió: `La consola no dispone de una ventana capturable.` No se obtuvo ningún PNG verificable; por tanto, no se fabricaron imágenes para las etapas posteriores.
+El primer intento de captura directa de consola no encontró una ventana capturable. En la revisión de la rúbrica se resolvió la generación de imágenes capturando un visor real. Se conservó el registro del intento inicial como evidencia histórica; ya no significa que falten PNG.
 
-| PNG requerido (pendiente) | Evidencia textual disponible |
+Las capturas se guardaron en formato PNG mediante conversión de formato de la imagen proporcionada por la herramienta, sin recortar, retocar o modificar su contenido visual.
+
+| Captura disponible | Fuente visible |
 |---|---|
-| parte1_verde.png | parte1_verde.txt: dependencias y 16 pruebas correctas en sdd |
-| parte2_rojo.png | parte2_rojo.txt: 17 correctas, 1 fallo real; salida 1 |
+| parte1_verde.png | parte1_verde.txt: rama sdd, dependencias y 16 pruebas correctas |
+| parte2_rojo.png | parte2_rojo.txt: error Expected/Actual, 17 correctas y 1 fallo real |
 | parte3_verde.png | parte3_verde.txt: 18 correctas; salida 0 |
 | parte4_analyze.png | parte4_analyze.txt: unused_local_variable y avoid_print |
-| parte6_refactor.png | parte6_refactor.txt y parte6_refactor.diff |
-| parte7_coverage.png | parte7_coverage.txt y cobertura.md |
-| parte8_log.png | parte8_log.txt: historial rojo, verde y refactor |
+| parte6_refactor.png | parte6_revision.txt: concatenación identificada del diff y la salida originales, sin cambiar su contenido |
+| parte7_coverage.png | cobertura.md: tabla calculada desde LCOV |
+| parte8_log.png | parte8_log.txt: historial original con rojo, verde y refactor |
 
-Las siete capturas siguen pendientes si la rúbrica exige PNG. Los registros permiten revisar el trabajo, pero no sustituyen formalmente ese requisito. Para capturar estados antiguos habría que reproducirlos desde sus commits en otro checkout; no se debe presentar una ejecución final como si fuese el rojo original.
+Todas las fuentes de las imágenes están incluidas. La captura de cobertura muestra la tabla; la ejecución de flutter test --coverage está en parte7_coverage.txt. La salida limpia final del linter está en verificacion_final_analyze.txt y se repitió en auditoria_rubrica_analyze.txt.
+
+**Límite académico:** si el docente exige capturas tomadas durante la ejecución original en terminal, estas capturas posteriores del visor no cumplen ese requisito temporal. No se garantiza una calificación ni se oculta esta diferencia.
 
 ## Verificación y trazabilidad
 

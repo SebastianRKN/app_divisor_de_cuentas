@@ -1,0 +1,43 @@
+DIFF ORIGINAL DE LA PARTE 6 (antes del commit dca80ab)
+
+diff --git a/lib/data/redondeo_exacto.dart b/lib/data/redondeo_exacto.dart
+index 1281b34..a439fad 100644
+--- a/lib/data/redondeo_exacto.dart
++++ b/lib/data/redondeo_exacto.dart
+@@ -1,8 +1,11 @@
+ import '../domain/estrategia_redondeo.dart';
+ 
+ class RedondeoExacto implements EstrategiaRedondeo {
++  static const _centavosPorUnidad = 100;
++
+   /// Recibe un pago validado y devuelve los centavos más cercanos.
+   /// Implementa el modo exacto; no formatea ni produce errores con entradas válidas.
+   @override
+-  double redondear(double cantidad) => (cantidad * 100).roundToDouble() / 100;
++  double redondear(double cantidad) =>
++      (cantidad * _centavosPorUnidad).roundToDouble() / _centavosPorUnidad;
+ }
+
+SALIDA ORIGINAL DE FLUTTER TEST TRAS EL REFACTOR
+
+00:00 +0: loading C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart
+00:00 +0: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 1. reparto normal
+00:00 +1: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 2. sin propina
+00:00 +2: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 3. cero personas
+00:00 +3: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 4. monto no numérico
+00:00 +4: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 5. redondeo exacto
+00:00 +5: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: 6. redondeo hacia arriba
+00:00 +6: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: LSP: el mismo cálculo acepta ambas estrategias
+00:00 +7: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: Rechaza una propina del 150%
+00:00 +8: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/division_test.dart: Permite una propina exactamente del 100%
+00:00 +9: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 1. reparto normal
+00:00 +10: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 1. reparto normal
+00:00 +11: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 1. reparto normal
+00:02 +12: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 2. sin propina
+00:02 +13: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 3. cero personas
+00:02 +14: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 4. monto no numérico
+00:03 +15: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 5. redondeo exacto
+00:03 +16: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Pantalla: 6. redondeo hacia arriba
+00:04 +17: C:/Users/sebas/OneDrive/Desktop/app/participacion 7/app_divisor_cuentas/test/pantalla_test.dart: Un error retira el pago anterior
+00:05 +18: All tests passed!
+
