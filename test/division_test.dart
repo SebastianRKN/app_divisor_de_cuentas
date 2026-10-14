@@ -45,4 +45,12 @@ void main() {
       );
     }
   });
+  test('Rechaza una propina del 150%', () {
+    const cuenta = Cuenta(monto: 100, personas: 4, propina: 150);
+    expect(validar.ejecutar(cuenta), 'La propina no puede superar el 100%');
+  });
+  test('Permite una propina exactamente del 100%', () {
+    const cuenta = Cuenta(monto: 100, personas: 4, propina: 100);
+    expect(validar.ejecutar(cuenta), isNull);
+  });
 }
